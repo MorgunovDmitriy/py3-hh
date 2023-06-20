@@ -26,7 +26,7 @@ git branch -M main
 git remote add origin git@github.com:Amankaium/py3-hh.git
 git push -u origin main
 
-# заливка изменений
+# заливка изменений___
 git add .
 git commit -m "some text"
 git push
