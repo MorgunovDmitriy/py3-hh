@@ -1,8 +1,9 @@
 from django.shortcuts import render, HttpResponse
+from .models import Vacancy
 
 # Create your views here.
 def homepage(request):
-    return HttpResponse("hi")
+    return render(request=request, template_name="index.html")
 
 def about(request):
     return HttpResponse("Найдите работу или работника мечты")
@@ -17,3 +18,9 @@ def adresses(request):
         <li>г.ОШ, ул.Мамасалиева 12</li>
         </ul>
     ''')
+
+def vacancy_list(request):
+    vacancies=Vacancy.objects.all() #SElect в Django ORM
+    context={"vacancies":vacancies}
+    context["example"]="Hello World"
+    return render(request, 'vacancies.html',context)
