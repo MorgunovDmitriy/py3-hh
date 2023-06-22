@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from .models import *
 
-# Create your views here.
+def workers(request):
+    workers = Worker.objects.all()  # SElect в Django ORM
+    context = {"workers": workers}
+    return render(request, 'workers.html', context)
