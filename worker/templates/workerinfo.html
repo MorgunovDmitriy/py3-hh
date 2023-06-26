@@ -13,6 +13,13 @@
             <ol> Открыт для предложений: {{ worker.is_searching }}</ol>
         </ul>
 
-
+    <h1>Интересующие вакансии</h1>
+    {% for v in worker.vacancy_set.all %}
+        <div>{{v.title}}</div>
+    {% endfor %}
+    <hr>
+    {% for v in vacancies %}
+        <div>{{v.title}}</div>
+    {% endfor %}
 </body>
 </html>

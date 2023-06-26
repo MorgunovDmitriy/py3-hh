@@ -1,5 +1,6 @@
 from django.db import models
 from worker.models import Worker
+from django.contrib.auth.models import User
 
 class Vacancy(models.Model):
     title = models.CharField(max_length=255,verbose_name='Вакансия')
@@ -12,6 +13,11 @@ class Vacancy(models.Model):
         to=Worker,
         blank=True,
         )
+    view = models.ManyToManyField(
+        to=User,
+        blank=True,
+        verbose_name='Просмотр'
+    )
     def __str__(self):
         return self.title
 
