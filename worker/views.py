@@ -10,4 +10,4 @@ def worker_info(request,id):
     worker_object = Worker.objects.get(id=id)
     #SELECT * FROM Worker WHERE id={id}
     context = {"worker":worker_object}
-    return render(request, "workers.html", context)
+    return render(request, "workerinfo.html", context)

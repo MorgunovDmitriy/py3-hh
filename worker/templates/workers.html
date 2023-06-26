@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+<html lang="ru">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Worker INFO</title>
+    <title>Работники</title>
 </head>
 <body>
-    <h1> Информация о сотруднике</h1>
-        <ul>
-            <ol> Имя: {{ worker.name_worker }}</ol>
-            <ol> Специализация: {{ worker.speciality }}</ol>
-            <ol> Ожидаемая зарплата: {{ worker.expested_salary }}</ol>
-            <ol> Открыт для предложений: {{ worker.is_searching }}</ol>
-        </ul>
-
+    <h1>Работники</h1>
+        {% for v in workers %}
+        <div>{{ v.name_worker }} - {{ v.speciality }}</div>
+        {% endfor %}
 
 </body>
 </html>
